@@ -20,7 +20,8 @@ namespace ChangeKey
         public override string Author => "Rua";
         public override string Description => "钥匙交换物品";
         public override string Name => "KeyChange";
-        public override Version Version => Assembly.GetExecutingAssembly().GetName().Version; public KeyChange(Main game) : base(game) { }
+        public override Version Version => new Version(1,0,0,2);
+        public KeyChange(Main game) : base(game) { }
         #endregion
 
         public Action<string> CommanAction { get; set; }
@@ -131,8 +132,8 @@ namespace ChangeKey
         }
         int getItemIDFromKeyID(int keyID)
         {
-            int[] gold = { 113, 155, 156, 157, 163, 164, 329, 3317 };//金钥匙=327
-            int[] shadow = { 274, 218, 112, 220, 3019, 5010, 5010 };//暗影钥匙=329
+            int[] gold = { 113, 155, 156, Main.remixWorld?2623:157, 163, 164, 329, 3317 };//金钥匙=327
+            int[] shadow = { 274, 218, Main.remixWorld?683:112, 220, 3019, 5010, 5010 };//暗影钥匙=329
             if (keyID == 327)
             {
                 return gold[random.Next(0, gold.Length)];

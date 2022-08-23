@@ -20,7 +20,7 @@ namespace ChangeKey
         public override string Author => "Rua";
         public override string Description => "钥匙交换物品";
         public override string Name => "KeyChange";
-        public override Version Version => new Version(1,0,0,2);
+        public override Version Version => new Version(1,0,0,1);
         public KeyChange(Main game) : base(game) { }
         #endregion
 
@@ -69,13 +69,11 @@ namespace ChangeKey
                     player.SendInfoMessage("/kc list        列出所有可交换的钥匙" +
                         "\n/kc 数字       可交换指定钥匙" +
                         "\n/kc help        获取帮助");
-                    return;
-                    break;
+                    return; 
                 case "list":
                     player.SendInfoMessage("/kc 数字可交换钥匙");
                     player.SendInfoMessage("腐化钥匙(1)\n血腥钥匙(2)\n沙漠钥匙(3)\n丛林钥匙(4)\n神圣钥匙(5)\n冰霜钥匙(6)\n金钥匙(7)\n暗影钥匙(8)");
-                    return;
-                    break;
+                    return; 
                 case "1":
                 case "腐化钥匙":
                     keyID = 1534;
@@ -119,8 +117,7 @@ namespace ChangeKey
                     break;
                 default:
                     player.SendInfoMessage("无此参数,输入/kc help获取帮助");
-                    return;
-                    break;
+                    return; 
 
             }
 

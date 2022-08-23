@@ -18,11 +18,9 @@ namespace ChangeKey
         {
             if (!File.Exists(ConfigPath))
             {
-<<<<<<< HEAD
-                File.WriteAllText(ConfigPath, JsonConvert.SerializeObject(new Config(true,true,false)));
-=======
-                File.WriteAllText(ConfigPath, JsonConvert.SerializeObject(new Config(true,true,true)));
->>>>>>> 添加项目文件。
+ 
+                File.WriteAllText(ConfigPath, JsonConvert.SerializeObject(new Config(true,true,true))); 
+ 
             }
         }
         public static Config ReadConfig()
